@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: docker
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+log4j:
+  configurationFile: classpath:log4j2.xml
