@@ -76,9 +76,11 @@ public class CustomerController {
     @Operation(summary = "Remove from basket",
             description = "Removes an item from the basket")
     @DeleteMapping(REMOVE_PRODUCT_FROM_BASKET)
-    public ApiResponse<Long> removeProductFromBasket(@PathVariable Long basketId) {
-        logger.info("DELETE /baskets/{}", basketId);
-        basketService.removeFromBasket(basketId);
+    public ApiResponse<Long> removeProductFromBasket(
+            @PathVariable Long customerId,
+            @PathVariable Long basketId) {
+        logger.info("DELETE /baskets/{}/{}", customerId, basketId);
+        basketService.removeFromBasket(customerId, basketId);
         return ApiResponse.success(basketId);
     }
 

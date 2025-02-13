@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Basket Repository.
@@ -12,4 +13,6 @@ import java.util.List;
 @Repository
 public interface BasketRepository extends JpaRepository<Basket, Long> {
     List<Basket> findByCustomerId(Long customerId);
+
+    Optional<Basket> findByIdAndCustomerId(Long id, Long customerId);
 }

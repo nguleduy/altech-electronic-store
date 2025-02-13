@@ -33,4 +33,15 @@ public class GlobalExceptionHandler {
     public ApiResponse<Object> handleGenericException(Exception ex) {
         return ApiResponse.error(HttpStatus.INTERNAL_SERVER_ERROR.value(), ex.getMessage());
     }
+
+    /**
+     * Handle exception when the data is conflicted.
+     *
+     * @param e InvalidDataException
+     * @return ErrorResponse
+     */
+    @ExceptionHandler(InvalidDataException.class)
+    public ApiResponse<Object> handleDuplicateKeyException(InvalidDataException e) {
+        return ApiResponse.error(HttpStatus.CONFLICT.value(), e.getMessage());
+    }
 }

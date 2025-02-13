@@ -39,3 +39,12 @@ CREATE TABLE baskets
     product_id  BIGINT NOT NULL REFERENCES products (id) ON DELETE CASCADE,
     quantity    INT    NOT NULL
 );
+
+-- Table: users
+CREATE TABLE users
+(
+    id       BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255)        NOT NULL,
+    role     VARCHAR(255)        NOT NULL
+);

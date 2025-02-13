@@ -9,3 +9,7 @@ INSERT INTO customers (name, phone, address)
 VALUES ('Ruby', '0123456789', '123 Dongnai St');
 INSERT INTO customers (name, phone, address)
 VALUES ('Joseph', '9876543210', '456 Dongnai St');
+INSERT INTO users (username, password, role)
+VALUES ('admin', '$2a$10$1GkC95Ss4EcT4KDtVl6EEORhaguTz7GhyL7PnRpwGDrTu06NqGxPG', 'ADMIN');
+INSERT INTO users (username, password, role)
+VALUES ('customer', '$2a$10$cqp7U3308q9jzCtiK7RJ.ud4cwoZfnF11BpcE8eLaM4Xr9p0E52DO', 'CUSTOMER');

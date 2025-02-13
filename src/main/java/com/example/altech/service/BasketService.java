@@ -19,6 +19,7 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ import java.util.List;
  */
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class BasketService {
 
     private final BasketRepository basketRepository;
@@ -64,8 +66,8 @@ public class BasketService {
      *
      * @param basketId
      */
-    public void removeFromBasket(Long basketId) {
-        Basket basket = basketRepository.findById(basketId)
+    public void removeFromBasket(Long customerId, Long basketId) {
+        Basket basket = basketRepository.findByIdAndCustomerId(basketId, customerId)
                 .orElseThrow(() -> new ResourceNotFoundException("Basket not found"));
         basketRepository.deleteById(basket.getId());
         logger.info("Removed item from basket: {}", basket);
@@ -88,14 +90,16 @@ public class BasketService {
             BigDecimal amount =
                     item.getProduct().getPrice()
                             .multiply(BigDecimal.valueOf(item.getQuantity()));
+            
             List<Discount> discounts =
                     discountRepository.findByProductId(item.getProduct().getId());
             logger.info("Discounts: {}", discounts);
 
+            BigDecimal discountAmount = BigDecimal.ZERO;
             for (Discount discount : discounts) {
                 if (discount.getPromotion().getType()
                         .equals(DiscountType.BUY_ONE_GET_HALF_OFF.value())) {
-                    amount = DiscountCalculator.applyBuyOneGetHalfOff(
+                    discountAmount = DiscountCalculator.applyBuyOneGetHalfOff(
                             amount, item.getProduct().getPrice(),
                             item.getQuantity());
                 }
@@ -104,12 +108,13 @@ public class BasketService {
             receiptItems.add(
                     new ReceiptItemDTO(
                             item.getProduct().getName(),
-                            item.getQuantity(), amount));
-            total = total.add(amount);
+                            item.getQuantity(), amount, discountAmount));
+            total = total.add(
+                    discountAmount.compareTo(BigDecimal.ZERO) > 0 ? discountAmount : amount);
         }
 
         logger.info("Receipt items: {}", receiptItems);
-        return new ReceiptDTO(receiptItems, total);
+        return new ReceiptDTO(customerId, receiptItems, total);
     }
 
     /**

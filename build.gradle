@@ -42,6 +42,10 @@ dependencies {
     implementation libs.feign
     implementation libs.flyway
     implementation libs.swagger
+    implementation libs.springbootStarterSecurity
+    implementation libs.jjwtApi
+    implementation libs.jjwtImpl
+    implementation libs.jjwtJackson
 
     runtimeOnly libs.postgres
     testImplementation libs.springbootStarterTest

@@ -11,8 +11,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -109,12 +107,11 @@ public class AdminController {
      */
     @Operation(summary = "Add discount", description = "Adds a discount to a product")
     @PostMapping(ADD_DISCOUNT)
-    public ResponseEntity<DiscountDTO> addDiscount(
+    public ApiResponse<DiscountDTO> addDiscount(
             @PathVariable Long productId,
             @RequestParam String promotionType) {
         logger.info("Add discount for product: {}", productId);
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(discountService.addDiscount(productId, promotionType));
+        return ApiResponse.success(discountService.addDiscount(productId, promotionType));
     }
 
     /**
@@ -125,10 +122,10 @@ public class AdminController {
      */
     @Operation(summary = "Get discounts", description = "Returns a list of discounts for a product")
     @GetMapping(GET_DISCOUNT)
-    public ResponseEntity<List<DiscountDTO>> getDiscount(
+    public ApiResponse<List<DiscountDTO>> getDiscount(
             @PathVariable Long productId) {
         logger.info("Get discounts for product: {}", productId);
-        return ResponseEntity.ok(discountService.getDiscount(productId));
+        return ApiResponse.success(discountService.getDiscount(productId));
     }
 }
 

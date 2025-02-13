@@ -8,6 +8,7 @@ postgres = '42.6.0'
 flyway = '9.22.3'
 junit = '4.13.2'
 swagger = '2.3.0'
+jjwt = '0.11.5'
 
 [libraries]
 lombok = { module = 'org.projectlombok:lombok', version.ref = 'lombok' }
@@ -22,6 +23,10 @@ spingbootDataJpa = { module = 'org.springframework.boot:spring-boot-starter-data
 flyway = { module = 'org.flywaydb:flyway-core', version.ref = 'flyway' }
 junit = { module = 'junit:junit', version.ref = 'junit' }
 swagger = { module = 'org.springdoc:springdoc-openapi-starter-webmvc-ui', version.ref = 'swagger' }
+springbootStarterSecurity = { module = 'org.springframework.boot:spring-boot-starter-security', version.ref = 'spring'}
+jjwtApi = { module = 'io.jsonwebtoken:jjwt-api', version.ref = 'jjwt'}
+jjwtImpl = { module = 'io.jsonwebtoken:jjwt-impl', version.ref = 'jjwt'}
+jjwtJackson = { module = 'io.jsonwebtoken:jjwt-jackson', version.ref = 'jjwt'}
 
 [plugins]
 

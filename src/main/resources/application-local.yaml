@@ -16,3 +16,8 @@ spring:
   flyway:
     enabled: true
     locations: classpath:db/migration
+jwt:
+  expiryHour: 1
+  expiryDay: 14
+  accessKey: 15ff85dda11a039a27ce18aeae94558bba4231b5913002e5a3e4a00e0e810c1c
+  refreshKey: f55598d98e4880163002a1428513599925a5b933c75f565df1e380e06a5e209e

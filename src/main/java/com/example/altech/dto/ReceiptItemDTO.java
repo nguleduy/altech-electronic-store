@@ -15,4 +15,5 @@ public class ReceiptItemDTO {
     private String productName;
     private Integer quantity;
     private BigDecimal amount;
+    private BigDecimal discount;
 }
