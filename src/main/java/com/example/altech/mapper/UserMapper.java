@@ -13,6 +13,7 @@ public class UserMapper {
 
     /**
      * Convert entity to dto.
+     *
      * @param user
      * @return
      */
@@ -21,11 +22,16 @@ public class UserMapper {
                 .id(user.getId())
                 .username(user.getUsername())
                 .password(user.getPassword())
-                .role(user.getRole()).build();
+                .role(user.getRole())
+                .name(user.getName())
+                .phone(user.getPhone())
+                .address(user.getAddress())
+                .build();
     }
 
     /**
      * Convert dto to entity.
+     *
      * @param dto
      * @return
      */
@@ -34,6 +40,10 @@ public class UserMapper {
                 .id(dto.getId())
                 .username(dto.getUsername())
                 .password(dto.getPassword())
-                .role(dto.getRole()).build();
+                .role(dto.getRole())
+                .name(dto.getName())
+                .phone(dto.getPhone())
+                .address(dto.getAddress())
+                .build();
     }
 }

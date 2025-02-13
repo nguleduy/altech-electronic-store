@@ -10,9 +10,11 @@ import com.example.altech.mapper.BasketMapper;
 import com.example.altech.model.Basket;
 import com.example.altech.model.Discount;
 import com.example.altech.model.Product;
+import com.example.altech.model.User;
 import com.example.altech.repository.BasketRepository;
 import com.example.altech.repository.DiscountRepository;
 import com.example.altech.repository.ProductRepository;
+import com.example.altech.repository.UserRepository;
 import com.example.altech.util.DiscountCalculator;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -36,6 +38,7 @@ public class BasketService {
     private final ProductRepository productRepository;
     private final DiscountRepository discountRepository;
     private static final Logger logger = LoggerFactory.getLogger(BasketService.class);
+    private final UserRepository userRepository;
 
     /**
      * Adds an item to the basket.
@@ -50,6 +53,14 @@ public class BasketService {
         if (quantity <= 0) {
             logger.error("Quantity must be greater than zero.");
             throw new InvalidDataException("Quantity must be greater than zero.");
+        }
+
+        User customer = userRepository.findById(customerId)
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
+
+        if (!customer.getRole().equals("CUSTOMER")) {
+            logger.error("User is not a customer.");
+            throw new InvalidDataException("User is not a customer.");
         }
 
         Product product = productRepository.findById(productId)
@@ -85,6 +96,14 @@ public class BasketService {
         if (quantity <= 0) {
             logger.error("Quantity must be greater than zero.");
             throw new InvalidDataException("Quantity must be greater than zero.");
+        }
+
+        User customer = userRepository.findById(customerId)
+                .orElseThrow(() -> new ResourceNotFoundException("Customer not found"));
+
+        if (!customer.getRole().equals("CUSTOMER")) {
+            logger.error("User is not a customer.");
+            throw new InvalidDataException("User is not a customer.");
         }
 
         Basket basket = basketRepository.findByCustomerIdAndProductId(customerId, productId)

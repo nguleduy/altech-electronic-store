@@ -1,11 +1,11 @@
 package com.example.altech.controller;
 
 import com.example.altech.dto.BasketDTO;
-import com.example.altech.dto.CustomerDTO;
 import com.example.altech.dto.ReceiptDTO;
+import com.example.altech.dto.UserDTO;
 import com.example.altech.exception.ApiResponse;
 import com.example.altech.service.BasketService;
-import com.example.altech.service.CustomerService;
+import com.example.altech.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -37,15 +37,15 @@ import static com.example.altech.constant.PathDefinition.REMOVE_PRODUCT_FROM_BAS
 public class CustomerController {
 
     private final BasketService basketService;
-    private final CustomerService customerService;
+    private final UserService userService;
     private static final Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
     @Operation(summary = "Get customers",
             description = "Gets all customers")
     @GetMapping
-    public ApiResponse<List<CustomerDTO>> getCustomers() {
+    public ApiResponse<List<UserDTO>> getCustomers() {
         logger.info("GET /customers");
-        return ApiResponse.success(customerService.getCustomers());
+        return ApiResponse.success(userService.getCustomers());
     }
 
     /**

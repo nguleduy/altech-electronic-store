@@ -14,15 +14,6 @@ CREATE TABLE promotions
     description TEXT               NOT NULL
 );
 
--- Table: customers
-CREATE TABLE customers
-(
-    id      BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name    VARCHAR(255) NOT NULL,
-    phone   VARCHAR(255),
-    address TEXT         NOT NULL
-);
-
 -- Table: discounts
 CREATE TABLE discounts
 (
@@ -46,5 +37,8 @@ CREATE TABLE users
     id       BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     username VARCHAR(255) UNIQUE NOT NULL,
     password VARCHAR(255)        NOT NULL,
-    role     VARCHAR(255)        NOT NULL
+    role     VARCHAR(255)        NOT NULL,
+    name     VARCHAR(255)        NOT NULL,
+    phone    VARCHAR(255),
+    address  TEXT                NOT NULL
 );

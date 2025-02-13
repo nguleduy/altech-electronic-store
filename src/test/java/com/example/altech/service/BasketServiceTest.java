@@ -3,14 +3,14 @@ package com.example.altech.service;
 import com.example.altech.dto.BasketDTO;
 import com.example.altech.dto.ReceiptDTO;
 import com.example.altech.model.Basket;
-import com.example.altech.model.Customer;
 import com.example.altech.model.Discount;
 import com.example.altech.model.Product;
 import com.example.altech.model.Promotion;
+import com.example.altech.model.User;
 import com.example.altech.repository.BasketRepository;
-import com.example.altech.repository.CustomerRepository;
 import com.example.altech.repository.DiscountRepository;
 import com.example.altech.repository.ProductRepository;
+import com.example.altech.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
@@ -40,7 +40,7 @@ class BasketServiceTest {
     @MockBean
     private DiscountRepository discountRepository;
     @MockBean
-    private CustomerRepository customerRepository;
+    private UserRepository userRepository;
 
     @Autowired
     private BasketService basketService;
@@ -49,11 +49,10 @@ class BasketServiceTest {
     void testAddToBasket() {
         Product product = new Product(1L, "Laptop", new BigDecimal("1000.00"));
         Basket basket = new Basket(null, 123L, product, 2);
-        Customer customer = new Customer(123L, "John", "123-456-7890", "123 Main St");
 
         Mockito.when(productRepository.findById(1L)).thenReturn(Optional.of(product));
         Mockito.when(basketRepository.save(Mockito.any(Basket.class))).thenReturn(basket);
-        Mockito.when(customerRepository.findById(123L)).thenReturn(Optional.of(customer));
+        Mockito.when(userRepository.findById(123L)).thenReturn(Optional.of(User.builder().id(123L).role("CUSTOMER").build()));
 
         BasketDTO savedBasket = basketService.addToBasket(123L, 1L, 2);
 

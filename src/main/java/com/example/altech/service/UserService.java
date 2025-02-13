@@ -3,6 +3,7 @@ package com.example.altech.service;
 import com.example.altech.dto.RegisterUserDTO;
 import com.example.altech.dto.UserDTO;
 import com.example.altech.exception.InternalServerException;
+import com.example.altech.exception.ResourceNotFoundException;
 import com.example.altech.mapper.UserMapper;
 import com.example.altech.model.User;
 import com.example.altech.repository.UserRepository;
@@ -13,6 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -27,6 +29,7 @@ public class UserService {
 
     /**
      * Get user details.
+     *
      * @return UserDetailsService
      */
     public UserDetailsService getUserDetailsService() {
@@ -36,6 +39,7 @@ public class UserService {
 
     /**
      * Find user by username.
+     *
      * @param username
      * @return UserDTO
      */
@@ -49,6 +53,7 @@ public class UserService {
 
     /**
      * Save user.
+     *
      * @param request
      * @return username
      */
@@ -67,5 +72,15 @@ public class UserService {
         userRepository.save(user);
 
         return user.getUsername();
+    }
+
+    /**
+     * Retrieves all customers.
+     *
+     * @return List UserDTO
+     */
+    public List<UserDTO> getCustomers() {
+        List<User> customers = userRepository.findByRole("CUSTOMER");
+        return customers.stream().map(UserMapper::toDto).toList();
     }
 }
