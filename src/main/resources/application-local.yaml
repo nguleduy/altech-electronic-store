@@ -16,6 +16,10 @@ spring:
   flyway:
     enabled: true
     locations: classpath:db/migration
+    create-schemas: true
+    default-schema: public
+    schemas: public
+    tablespace: public
 jwt:
   expiryHour: 1
   expiryDay: 14
