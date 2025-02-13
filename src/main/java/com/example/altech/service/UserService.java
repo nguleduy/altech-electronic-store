@@ -65,6 +65,9 @@ public class UserService {
         UserDTO userDto = UserDTO.builder()
                 .username(request.getUsername())
                 .role(request.getRole())
+                .name(request.getName())
+                .phone(request.getPhone())
+                .address(request.getAddress())
                 .build();
         User user = UserMapper.toEntity(userDto);
         String hashPassword = passwordEncoder.encode(request.getPassword());

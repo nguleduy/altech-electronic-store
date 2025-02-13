@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "807d618c-8bdb-4a93-9001-89c0001f5679",
+		"_postman_id": "3321aae9-d6cb-4ace-837f-a0d7d7b1d1f4",
 		"name": "Altech",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "34456189"
@@ -17,7 +17,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyMzE4N30.KuZo9VFbfPbdzS7xrEJI8ZuOlxxw7rFA_HLT9zbDwas",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQ0MTQwMn0.Ykdvx-Ce-NKdUpDpxnhIelxRCzGlIvNUShucpjZlCo4",
 									"type": "string"
 								}
 							]
@@ -47,7 +47,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4ODI0fQ.zsZEdjQt8uAtZwtJgcarYt05_RRdX1f-xRGGwQee-1k",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQ0MTQwMn0.Ykdvx-Ce-NKdUpDpxnhIelxRCzGlIvNUShucpjZlCo4",
 									"type": "string"
 								}
 							]
@@ -55,7 +55,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url-docker}}/api/v1/admin/products/1",
+							"raw": "{{url-docker}}/api/v1/admin/products/4",
 							"host": [
 								"{{url-docker}}"
 							],
@@ -64,7 +64,7 @@
 								"v1",
 								"admin",
 								"products",
-								"1"
+								"4"
 							]
 						}
 					},
@@ -78,7 +78,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4ODI0fQ.zsZEdjQt8uAtZwtJgcarYt05_RRdX1f-xRGGwQee-1k",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQ0MTQwMn0.Ykdvx-Ce-NKdUpDpxnhIelxRCzGlIvNUShucpjZlCo4",
 									"type": "string"
 								}
 							]
@@ -86,7 +86,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url-docker}}/api/v1/admin/discounts/3",
+							"raw": "{{url-docker}}/api/v1/admin/discounts/4",
 							"host": [
 								"{{url-docker}}"
 							],
@@ -95,7 +95,7 @@
 								"v1",
 								"admin",
 								"discounts",
-								"3"
+								"4"
 							]
 						}
 					},
@@ -109,7 +109,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4ODI0fQ.zsZEdjQt8uAtZwtJgcarYt05_RRdX1f-xRGGwQee-1k",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQ0MTQwMn0.Ykdvx-Ce-NKdUpDpxnhIelxRCzGlIvNUShucpjZlCo4",
 									"type": "string"
 								}
 							]
@@ -117,7 +117,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{url-docker}}/api/v1/admin/products/1",
+							"raw": "{{url-docker}}/api/v1/admin/products/3",
 							"host": [
 								"{{url-docker}}"
 							],
@@ -126,7 +126,7 @@
 								"v1",
 								"admin",
 								"products",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -140,7 +140,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4ODI0fQ.zsZEdjQt8uAtZwtJgcarYt05_RRdX1f-xRGGwQee-1k",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQ0MTQwMn0.Ykdvx-Ce-NKdUpDpxnhIelxRCzGlIvNUShucpjZlCo4",
 									"type": "string"
 								}
 							]
@@ -148,7 +148,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{url-docker}}/api/v1/admin/discounts/2?promotionType=BUY_ONE_GET_HALF_OFF",
+							"raw": "{{url-docker}}/api/v1/admin/discounts/4?promotionType=BUY_ONE_GET_HALF_OFF",
 							"host": [
 								"{{url-docker}}"
 							],
@@ -157,7 +157,7 @@
 								"v1",
 								"admin",
 								"discounts",
-								"2"
+								"4"
 							],
 							"query": [
 								{
@@ -177,7 +177,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4ODI0fQ.zsZEdjQt8uAtZwtJgcarYt05_RRdX1f-xRGGwQee-1k",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQ0MTQwMn0.Ykdvx-Ce-NKdUpDpxnhIelxRCzGlIvNUShucpjZlCo4",
 									"type": "string"
 								}
 							]
@@ -186,7 +186,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Mouse\",\n    \"price\": 12345\n}",
+							"raw": "{\n    \"name\": \"Mouse\",\n    \"price\": 12000\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -221,7 +221,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyODc3Mn0.P0uVZjK5gW3c2idrrc-DwrYBNCzCn_3qxlBVV_9bvMc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQ0MTQwMn0.Ykdvx-Ce-NKdUpDpxnhIelxRCzGlIvNUShucpjZlCo4",
 									"type": "string"
 								}
 							]
@@ -229,7 +229,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{url-docker}}/api/v1/customer/baskets/2/3?quantity=200",
+							"raw": "{{url-docker}}/api/v1/customer/baskets/2/4?quantity=25",
 							"host": [
 								"{{url-docker}}"
 							],
@@ -239,12 +239,12 @@
 								"customer",
 								"baskets",
 								"2",
-								"3"
+								"4"
 							],
 							"query": [
 								{
 									"key": "quantity",
-									"value": "200"
+									"value": "25"
 								}
 							]
 						}
@@ -267,7 +267,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{url-docker}}/api/v1/customer/baskets/2/3?quantity=220",
+							"raw": "{{url-docker}}/api/v1/customer/baskets/2/4?quantity=1",
 							"host": [
 								"{{url-docker}}"
 							],
@@ -277,12 +277,12 @@
 								"customer",
 								"baskets",
 								"2",
-								"3"
+								"4"
 							],
 							"query": [
 								{
 									"key": "quantity",
-									"value": "220"
+									"value": "1"
 								}
 							]
 						}
@@ -297,7 +297,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyODc3Mn0.P0uVZjK5gW3c2idrrc-DwrYBNCzCn_3qxlBVV_9bvMc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQ0MTQwMn0.Ykdvx-Ce-NKdUpDpxnhIelxRCzGlIvNUShucpjZlCo4",
 									"type": "string"
 								}
 							]
@@ -329,7 +329,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyODc3Mn0.P0uVZjK5gW3c2idrrc-DwrYBNCzCn_3qxlBVV_9bvMc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQ0MTQwMn0.Ykdvx-Ce-NKdUpDpxnhIelxRCzGlIvNUShucpjZlCo4",
 									"type": "string"
 								}
 							]
@@ -358,7 +358,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyODc3Mn0.P0uVZjK5gW3c2idrrc-DwrYBNCzCn_3qxlBVV_9bvMc",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQ0MTQwMn0.Ykdvx-Ce-NKdUpDpxnhIelxRCzGlIvNUShucpjZlCo4",
 									"type": "string"
 								}
 							]
@@ -393,7 +393,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"username\": \"test1\",\n  \"password\": \"P@ssw0rd\",\n  \"role\": \"string\"\n}",
+							"raw": "{\n  \"username\": \"test\",\n  \"password\": \"test\",\n  \"role\": \"test\",\n  \"name\": \"test\",\n  \"phone\": \"test\",\n  \"address\": \"test\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -454,7 +454,7 @@
 						"header": [
 							{
 								"key": "Referer",
-								"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4NzcwLCJleHAiOjE3NDA2MjgzNzB9.z97vdKgxZK3urkrByhxq6sZLN9_sEW1fnUPeGA-P6rg",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDQxMzIxLCJleHAiOjE3Mzk1Mjc3MjF9.NLcERSOlPvBZENGkR4owAS-9mc4ducBln6K4U5LBzCI",
 								"type": "text"
 							}
 						],
