@@ -1,0 +1,479 @@
+{
+	"info": {
+		"_postman_id": "807d618c-8bdb-4a93-9001-89c0001f5679",
+		"name": "Altech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34456189"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Get Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyMzE4N30.KuZo9VFbfPbdzS7xrEJI8ZuOlxxw7rFA_HLT9zbDwas",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/admin/products",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product Detail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4ODI0fQ.zsZEdjQt8uAtZwtJgcarYt05_RRdX1f-xRGGwQee-1k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/admin/products/1",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Discounts For Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4ODI0fQ.zsZEdjQt8uAtZwtJgcarYt05_RRdX1f-xRGGwQee-1k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/admin/discounts/3",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"discounts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4ODI0fQ.zsZEdjQt8uAtZwtJgcarYt05_RRdX1f-xRGGwQee-1k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/admin/products/1",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Discount To Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4ODI0fQ.zsZEdjQt8uAtZwtJgcarYt05_RRdX1f-xRGGwQee-1k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/admin/discounts/2?promotionType=BUY_ONE_GET_HALF_OFF",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"discounts",
+								"2"
+							],
+							"query": [
+								{
+									"key": "promotionType",
+									"value": "BUY_ONE_GET_HALF_OFF"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4ODI0fQ.zsZEdjQt8uAtZwtJgcarYt05_RRdX1f-xRGGwQee-1k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Mouse\",\n    \"price\": 12345\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-docker}}/api/v1/admin/products",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Add Basket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyODc3Mn0.P0uVZjK5gW3c2idrrc-DwrYBNCzCn_3qxlBVV_9bvMc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/customer/baskets/2/3?quantity=200",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								"baskets",
+								"2",
+								"3"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "200"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Basket",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyODc3Mn0.P0uVZjK5gW3c2idrrc-DwrYBNCzCn_3qxlBVV_9bvMc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/customer/baskets/2/3?quantity=220",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								"baskets",
+								"2",
+								"3"
+							],
+							"query": [
+								{
+									"key": "quantity",
+									"value": "220"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Receipt",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyODc3Mn0.P0uVZjK5gW3c2idrrc-DwrYBNCzCn_3qxlBVV_9bvMc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/customer/baskets/2/receipt",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								"baskets",
+								"2",
+								"receipt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyODc3Mn0.P0uVZjK5gW3c2idrrc-DwrYBNCzCn_3qxlBVV_9bvMc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/customer",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Basket For Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTczOTQyODc3Mn0.P0uVZjK5gW3c2idrrc-DwrYBNCzCn_3qxlBVV_9bvMc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/customer/baskets/2",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customer",
+								"baskets",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"test1\",\n  \"password\": \"P@ssw0rd\",\n  \"role\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-docker}}/api/v1/auth/register",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"P@ssw0rd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-docker}}/api/v1/auth/login",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Referer",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNzM5NDE4NzcwLCJleHAiOjE3NDA2MjgzNzB9.z97vdKgxZK3urkrByhxq6sZLN9_sEW1fnUPeGA-P6rg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url-docker}}/api/v1/auth/refresh",
+							"host": [
+								"{{url-docker}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

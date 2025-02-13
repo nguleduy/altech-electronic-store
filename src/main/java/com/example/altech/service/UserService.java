@@ -1,8 +1,8 @@
 package com.example.altech.service;
 
-import com.example.altech.dto.LoginRequestDTO;
 import com.example.altech.dto.RegisterUserDTO;
 import com.example.altech.dto.UserDTO;
+import com.example.altech.exception.InternalServerException;
 import com.example.altech.mapper.UserMapper;
 import com.example.altech.model.User;
 import com.example.altech.repository.UserRepository;
@@ -12,6 +12,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 /**
  * User service.
@@ -51,6 +53,10 @@ public class UserService {
      * @return username
      */
     public String saveUser(RegisterUserDTO request) {
+        Optional<User> existingUser = userRepository.findByUsername(request.getUsername());
+        if (existingUser.isPresent()) {
+            throw new InternalServerException("Username already exists.");
+        }
         UserDTO userDto = UserDTO.builder()
                 .username(request.getUsername())
                 .role(request.getRole())

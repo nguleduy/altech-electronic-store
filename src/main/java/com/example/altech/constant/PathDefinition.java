@@ -16,7 +16,7 @@ public class PathDefinition {
     public static final String ADD_DISCOUNT = "/discounts/{productId}";
     public static final String GET_DISCOUNT = "/discounts/{productId}";
     public static final String ADD_PRODUCT_TO_BASKET = "/baskets/{customerId}/{productId}";
-    public static final String REMOVE_PRODUCT_FROM_BASKET = "/baskets/{customerId}/{basketId}";
+    public static final String REMOVE_PRODUCT_FROM_BASKET = "/baskets/{customerId}/{productId}";
     public static final String GET_BASKET = "/baskets/{customerId}";
     public static final String GET_RECEIPT = "/baskets/{customerId}/receipt";
     public static final String LOGIN = "/login";

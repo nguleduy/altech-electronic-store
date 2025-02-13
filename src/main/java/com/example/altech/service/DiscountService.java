@@ -21,7 +21,6 @@ import java.util.Optional;
  */
 @Service
 @RequiredArgsConstructor
-@Transactional
 public class DiscountService {
     private final DiscountRepository discountRepository;
     private final ProductRepository productRepository;
@@ -34,6 +33,7 @@ public class DiscountService {
      * @param promotionType The type of promotion.
      * @return The added discount.
      */
+    @Transactional
     public DiscountDTO addDiscount(Long productId, String promotionType) {
         List<Promotion> promotions = promotionRepository.findByType(promotionType);
         if (promotions.isEmpty()) {

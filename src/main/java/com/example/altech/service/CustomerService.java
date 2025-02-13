@@ -19,7 +19,7 @@ import java.util.List;
 public class CustomerService {
 
     private final CustomerRepository customerRepository;
-    private static final Logger logger = LoggerFactory.getLogger(BasketService.class);
+    private static final Logger logger = LoggerFactory.getLogger(CustomerService.class);
 
     /**
      * Retrieves all customers.
